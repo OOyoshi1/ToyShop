@@ -22,25 +22,66 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="58*"/>
-            <RowDefinition Height="151*"/>
-            <RowDefinition Height="152*"/>
-            <RowDefinition Height="178*"/>
-            <RowDefinition Height="167*"/>
-            <RowDefinition Height="58*"/>
+            <RowDefinition Height="69*"/>
+            <RowDefinition Height="101*"/>
+            <RowDefinition Height="102*"/>
+            <RowDefinition Height="102*"/>
+            <RowDefinition Height="101*"/>
+            <RowDefinition Height="220*"/>
+            <RowDefinition Height="69*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="#E0C5BA" BorderThickness="1">
-            <TextBlock x:Name="Label" Text="Оформление заказа" FontSize="45" 
-           FontFamily="Ink Free" HorizontalAlignment="Center" 
+        <Border Grid.Row="0" Background="#E0C5BA">
+            <TextBlock x:Name="Label" Text="Оформление заказа" FontSize="48" 
+           FontFamily="Segoe Script" HorizontalAlignment="Center" 
            VerticalAlignment="Center" Foreground="#F8F4F1"/>
         </Border>
-        <Border Grid.Row="5" Background="#E0C5BA" BorderThickness="1">
+        <Border Grid.Row="6" Background="#E0C5BA">
             <Button x:Name="BtnBuy"
             Content="Купить" FontSize="35" Height="51" 
             Background="#F8F4F1" Width="153" Foreground="#D29A89"
             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
             FontFamily="Segoe UI Light" FontWeight="UltraLight" Click="BtnBuy_Click" BorderBrush="{x:Null}"/>
         </Border>
-        
+        <TextBox x:Name="tbEmail" GotFocus="tbEmail_GotFocus" LostFocus="tbEmail_LostFocus" FontSize="40" 
+                VerticalAlignment="Center" 
+                Foreground="#E0C5BA" Grid.Row="1" Text="Электронная почта" Height="51" Margin="30,0,30,0" 
+                FontFamily="Segoe UI Light" BorderBrush="{x:Null}">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="tbAdres" GotFocus="tbAdres_GotFocus" LostFocus="tbAdres_LostFocus" FontSize="40" 
+                VerticalAlignment="Center" 
+                Foreground="#E0C5BA" Grid.Row="2" Text="Адресс" Height="51" Margin="30,0,30,0" 
+                FontFamily="Segoe UI Light" BorderBrush="{x:Null}">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="tbTypeOfDel" GotFocus="tbTypeOfDel_GotFocus" LostFocus="tbTypeOfDel_LostFocus" FontSize="40" 
+                 VerticalAlignment="Center" 
+                Foreground="#E0C5BA" Grid.Row="3" Text="Тип доставки" Height="51" Margin="30,0,30,0" 
+                FontFamily="Segoe UI Light" BorderBrush="{x:Null}">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="tbPhone" GotFocus="tbPhone_GotFocus" LostFocus="tbPhone_LostFocus" FontSize="40" 
+                VerticalAlignment="Center" 
+                Foreground="#E0C5BA" Grid.Row="4" Text="Номер телефона" Height="51" Margin="30,0,30,0" 
+                FontFamily="Segoe UI Light" BorderBrush="{x:Null}">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
     </Grid>
 </Window>

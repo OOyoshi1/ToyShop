@@ -5,10 +5,67 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ToyShop1.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1080" d:DesignWidth="1820"
+        Background="#F8F4F1"
       Title="ProductPage">
-
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" Background="{TemplateBinding Background}" BorderThickness="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
     <Grid>
-        
+        <ListView d:ItemsSource="{d:SampleData ItemCount=7}" x:Name="lvProduct" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), 
+                        RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
+                        ItemWidth="{Binding (ListView.View).ItemWidth, 
+                        RelativeSource={RelativeSource AncestorType=ListView}}"
+                        MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
+                        ItemHeight="{Binding (ListView.View).ItemHeight, 
+                        RelativeSource={RelativeSource AncestorType=ListView}}" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="105 0 30 0">
+                        <Button x:Name="BtnInfo"  
+                                Content="О товаре" FontSize="30" Height="51" 
+                                Background="#D29A89" Width="153" Foreground="Black" 
+                                VerticalContentAlignment="Center" 
+                                FontFamily="Segoe UI Light" FontWeight="UltraLight" Click="BtnInfo_Click" Margin="0 15 0 15" BorderBrush="{x:Null}"/>
+                        <StackPanel>
+                            <Border CornerRadius="20" Width="297" Height="341">
+                                <Border.Background>
+                                <ImageBrush Stretch="Fill" ImageSource="C:\Users\hlebu\source\repos\ToyShop\ToyShop1\Images\beb.jpg"/>
+                                </Border.Background>
+                            </Border>
+                            <Border CornerRadius="20" Background="#D29A89" Width="297" Height="80" Margin="0 -80 0 0">
+                                <StackPanel>
+                                    <TextBlock FontSize="20" Text="{Binding NameOfProduct}" HorizontalAlignment="Center"/>
+                                    <TextBlock FontSize="20" Text="{Binding CategoryProduct.NameOfCategory}" HorizontalAlignment="Center"/>
+                                    <TextBlock FontSize="20" Text="{Binding Price}" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+                            <Button x:Name="BtnBuy"  
+                                Content="Купить" FontSize="30" Height="51" 
+                                Background="#D29A89" Width="153" Foreground="Black" 
+                                VerticalContentAlignment="Center" 
+                                FontFamily="Segoe UI Light" FontWeight="UltraLight" Click="BtnBuy_Click" Margin="0 15 0 15" BorderBrush="{x:Null}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
 </Page>

@@ -72,17 +72,22 @@
                         FontFamily="Segoe UI Light" FontWeight="UltraLight" 
                         Visibility="Hidden" Click="BtnBack_Click"/>
                 <TextBlock x:Name="Label" Grid.Column="2" Text="Товары" FontSize="65" 
-                           FontFamily="Ink Free" HorizontalAlignment="Center" 
+                           FontFamily="Segoe Script" HorizontalAlignment="Center" 
                            VerticalAlignment="Center" Foreground="#F8F4F1" Visibility="Hidden"/>
                 <TextBlock x:Name="Label2" Grid.Column="2" Text="Корзина" FontSize="65" 
-                           FontFamily="Ink Free" HorizontalAlignment="Center" 
+                           FontFamily="Segoe Script" HorizontalAlignment="Center" 
                            VerticalAlignment="Center" Foreground="#F8F4F1" Visibility="Hidden"/>
-                <TextBlock x:Name="Label3" Grid.Column="2" Text="Информация о товаре" FontSize="65" 
-                           FontFamily="Ink Free" HorizontalAlignment="Center" 
+                <TextBlock x:Name="Label3" Grid.Column="1" Grid.ColumnSpan="3" Text="Информация о товаре" FontSize="65" 
+                           FontFamily="Segoe Script" HorizontalAlignment="Center" 
                            VerticalAlignment="Center" Foreground="#F8F4F1" Visibility="Hidden"/>
+                <Button x:Name="BtnBack2" Grid.Column="0" Grid.Row="0" 
+                        Content="Назад" FontSize="35" Height="51" 
+                        Background="#F8F4F1" Width="153" Foreground="#D29A89" 
+                        HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                        FontFamily="Segoe UI Light" FontWeight="UltraLight" Click="BtnBack2_Click" Visibility="Hidden"/>
                 
             </Grid>
         </Border>
-        <Frame x:Name="mainFrame" Grid.Row="1"/>
+        <Frame NavigationUIVisibility="Hidden" x:Name="mainFrame" Grid.Row="1"/>
     </Grid>
 </Window>

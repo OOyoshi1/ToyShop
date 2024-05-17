@@ -29,8 +29,8 @@
             <RowDefinition Height="142*"/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="Label3" Text="Авторизация" FontSize="65" 
-           FontFamily="Ink Free" HorizontalAlignment="Center" 
-           VerticalAlignment="Center" Foreground="#E0C5BA" Grid.Row="0" Height="80" Width="364"/>
+           FontFamily="Segoe Script" HorizontalAlignment="Center" 
+           VerticalAlignment="Center" Foreground="#E0C5BA" Grid.Row="0"/>
         <TextBox x:Name="tbLogin" GotFocus="tbLogin_GotFocus" LostFocus="tbLogin_LostFocus" FontSize="40" 
                  VerticalAlignment="Center" 
                  Foreground="#E0C5BA" Grid.Row="1" Text="Логин" Height="51" Margin="30,0,30,0" 

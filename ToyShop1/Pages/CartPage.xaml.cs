@@ -12,28 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ToyShop1.Classes;
-using ToyShop1.Pages;
-using ToyShop1.Windows;
 
 namespace ToyShop1.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для CartPage.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class CartPage : Page
     {
-        public MainPage()
+        public CartPage()
         {
             InitializeComponent();
-            
-        }
-
-        private void BtnProduct_Click(object sender, RoutedEventArgs e)
-        {
-            ProductPage pp = new ProductPage();
-            FrameClass.frame.Navigate(pp);
-            ButtonClass.btn.Visibility = Visibility.Visible;
         }
     }
 }

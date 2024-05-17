@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToyShop1.Classes;
+using ToyShop1.DB;
 
 namespace ToyShop1.Pages
 {
@@ -23,6 +25,24 @@ namespace ToyShop1.Pages
         public ProductPage()
         {
             InitializeComponent();
+            List <Product> products = new List<Product>();
+            products = EFClass.context.Product.ToList();
+            lvProduct.ItemsSource = products;
+            WindowClass.label.Visibility = Visibility.Visible;
+        }
+
+        private void BtnInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Product product = new Product();
+            product = (Product)((Button)sender).DataContext;
+            ProductInfoPage pi = new ProductInfoPage(product);
+            FrameClass.frame.Navigate(pi);
+            
+        }
+
+        private void BtnBuy_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

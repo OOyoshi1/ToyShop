@@ -28,5 +28,45 @@ namespace ToyShop1.Windows
         {
 
         }
+
+        private void tbEmail_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tbEmail_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tbAdres_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tbAdres_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tbTypeOfDel_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tbTypeOfDel_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tbPhone_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tbPhone_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

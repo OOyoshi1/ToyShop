@@ -5,10 +5,58 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ToyShop1.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1080" d:DesignWidth="1820"
+      Background="#F8F4F1"
       Title="ProductInfoPage">
-
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" Background="{TemplateBinding Background}" BorderThickness="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="131*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="498*"/>
+            <RowDefinition Height="117*"/>
+            <RowDefinition Height="112*"/>
+            <RowDefinition Height="222*"/>
+            <RowDefinition Height="131*"/>
+        </Grid.RowDefinitions>
+        <TextBlock  HorizontalAlignment="Center" Text="Информация о продавце" FontFamily="Segoe Script" FontSize="58" 
+            Grid.Row="1" VerticalAlignment="Center" Height="91" Width="801" />
+        <TextBlock  HorizontalAlignment="Center" Text="Описание товара" FontFamily="Segoe Script" FontSize="58" 
+          Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Height="91" Width="565" />
+        <TextBlock  HorizontalAlignment="Center" FontSize="48" x:Name="tb1" 
+                    Grid.Row="2" Grid.Column="1" FontFamily="Segoe UI Light"/>
+        <TextBlock  HorizontalAlignment="Center" FontFamily="Segoe UI Light" FontSize="48" x:Name="tb2" 
+                    Grid.Row="3" Grid.Column="1" TextAlignment="Center"
+                    TextWrapping="Wrap" Width="656"/>
+        <Border Grid.Row="4" Grid.ColumnSpan="2" Background="#E0C5BA"/>
+        <Button x:Name="BtnPrice"
+                FontSize="35" Grid.Column="0" Grid.Row="4" Height="51"
+                Background="#F8F4F1" Width="153" Foreground="#D29A89" 
+                HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="70,0,0,0"
+                FontFamily="Segoe UI Light" FontWeight="UltraLight"/>
+        <Button x:Name="BtnBuy"
+                FontSize="35" Grid.Column="1" Grid.Row="4" Content="Купить" Height="51"
+                Background="#F8F4F1" Width="153" Foreground="#D29A89" 
+                HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,70,0"
+                FontFamily="Segoe UI Light" FontWeight="UltraLight" Click="BtnBuy_Click"/>
+        <TextBlock  HorizontalAlignment="Center" FontSize="48" x:Name="tb3" 
+            Grid.Row="2" Grid.Column="0" FontFamily="Segoe UI Light"/>
+        <TextBlock  HorizontalAlignment="Center" FontSize="48" x:Name="tb4" 
+            Grid.Row="3" Grid.Column="0" FontFamily="Segoe UI Light"/>
     </Grid>
 </Page>

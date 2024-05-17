@@ -35,6 +35,6 @@
                 Background="#FFE0C5BA" Width="480" Foreground="#F8F4F1"
                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                 FontWeight="UltraLight" Click="BtnProduct_Click" BorderBrush="{x:Null}"/>
-        <TextBlock x:Name="Label" Grid.Row="0" Text="Магазин рукодельных игрушек" FontSize="65" FontFamily="Ink Free" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#E0C5BA"/>
+        <TextBlock x:Name="Label" Grid.Row="0" Text="Магазин рукодельных игрушек" FontSize="65" FontFamily="Segoe Script" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#E0C5BA"/>
     </Grid>
 </Page>

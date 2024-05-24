@@ -69,7 +69,7 @@ namespace ToyShop1.Windows
             currentUser = EFClass.context.User.Where(x => x.Login == tbLogin.Text && x.Password == tbPass.Text).FirstOrDefault();
             if (currentUser != null)
             {
-                CurrentUserClass.GetUserId(currentUser.IdUser);
+                CurrentUserClass.currentUser = currentUser;
                 MessageBox.Show("ОК!");
                 MainWindow main = new MainWindow();
                 main.Show();

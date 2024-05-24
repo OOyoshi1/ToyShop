@@ -11,12 +11,7 @@ namespace ToyShop1.Classes
     {
 
         public static User currentUser = new User();
-        public static Client client = new Client();
-        public static void GetUserId(int id)
-        {
-            currentUser = EFClass.context.User.Where(x => x.UserId == id).FirstOrDefault();
-            client = EFClass.context.Client.Where(x => x.IdClient ==currentUser.IdUser).FirstOrDefault();
-
-        }
+        
+        
     }
 }

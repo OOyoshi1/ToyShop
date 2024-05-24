@@ -65,6 +65,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\ButtonClass.cs" />
+    <Compile Include="Classes\CurrentUserClass.cs" />
     <Compile Include="Classes\EFClass.cs" />
     <Compile Include="Classes\ProductClass.cs" />
     <Compile Include="Classes\WindowClass.cs" />

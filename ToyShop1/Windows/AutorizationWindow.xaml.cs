@@ -65,9 +65,11 @@ namespace ToyShop1.Windows
 
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
-            var Auth = EFClass.context.User.Where(x => x.Login == tbLogin.Text && x.Password == tbPass.Text).FirstOrDefault();
-            if (Auth != null)
+            User currentUser = new User();
+            currentUser = EFClass.context.User.Where(x => x.Login == tbLogin.Text && x.Password == tbPass.Text).FirstOrDefault();
+            if (currentUser != null)
             {
+                CurrentUserClass.GetUserId(currentUser.IdUser);
                 MessageBox.Show("ОК!");
                 MainWindow main = new MainWindow();
                 main.Show();

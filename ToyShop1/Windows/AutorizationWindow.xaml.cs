@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ToyShop1.DB;
+using ToyShop1.Classes;
 
 namespace ToyShop1.Windows
 {
@@ -27,33 +29,61 @@ namespace ToyShop1.Windows
 
         private void tbLogin_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbLogin.Text == "Логин")
+            {
+                tbLogin.Text = string.Empty;
+                tbLogin.Foreground = Brushes.Black;
+            }
         }
 
         private void tbLogin_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbLogin.Text == "")
+            {
+                tbLogin.Foreground = Brushes.Gray;
+                tbLogin.Text = "Логин";
+            }
         }
 
         private void tbPass_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbPass.Text == "Пароль")
+            {
+                tbPass.Text = string.Empty;
+                tbPass.Foreground = Brushes.Black;
+            }
         }
 
         private void tbPass_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbPass.Text == "")
+            {
+                tbPass.Foreground = Brushes.Gray;
+                tbPass.Text = "Пароль";
+            }
         }
 
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
-
+            var Auth = EFClass.context.User.Where(x => x.Login == tbLogin.Text && x.Password == tbPass.Text).FirstOrDefault();
+            if (Auth != null)
+            {
+                MessageBox.Show("ОК!");
+                MainWindow main = new MainWindow();
+                main.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Пользователь не существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void BtnReg_Click(object sender, RoutedEventArgs e)
         {
-            RegistrationWindow rw = new RegistrationWindow();
-            rw.ShowDialog();
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.Show();
+            this.Close();
         }
     }
 }

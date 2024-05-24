@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ToyShop1.Classes;
+using ToyShop1.DB;
 
 namespace ToyShop1.Windows
 {
@@ -22,76 +24,209 @@ namespace ToyShop1.Windows
         public RegistrationWindow()
         {
             InitializeComponent();
+            cbGen.ItemsSource = EFClass.context.Gender.ToList();
+            cbGen.SelectedIndex = 1;
+            cbGen.DisplayMemberPath = "NameOfGender";
+            cbRole.ItemsSource = EFClass.context.UserRole.ToList();
+            cbRole.SelectedIndex = 2;
+            cbRole.DisplayMemberPath = "NameOfRole";
         }
 
         private void tbPass_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbPass.Text == "Пароль")
+            {
+                tbPass.Text = string.Empty;
+                tbPass.Foreground = Brushes.Black;
+            }
         }
 
         private void tbPass_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbPass.Text == "")
+            {
+                tbPass.Foreground = Brushes.Gray;
+                tbPass.Text = "Пароль";
+            }
         }
 
         private void tbLName_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbLName.Text == "Фамилия")
+            {
+                tbLName.Foreground = Brushes.Gray;
+                tbLName.Text = "";
+            }
         }
 
         private void tbLName_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbLName.Text == "")
+            {
+                tbLName.Foreground = Brushes.Gray;
+                tbLName.Text = "Фамилия";
+            }
         }
 
         private void tbFName_GotFocus(object sender, RoutedEventArgs e)
         {
+            if (tbFName.Text == "Имя")
+            {
+                tbFName.Foreground = Brushes.Gray;
+                tbFName.Text = "";
+            }
 
         }
 
         private void tbFName_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbFName.Text == "")
+            {
+                tbFName.Foreground = Brushes.Gray;
+                tbFName.Text = "Имя";
+            }
         }
 
         private void tbPatronymic_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbPatronymic.Text == "Отчество")
+            {
+                tbPatronymic.Foreground = Brushes.Gray;
+                tbPatronymic.Text = "";
+            }
         }
 
         private void tbPatronymic_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbPatronymic.Text == "")
+            {
+                tbPatronymic.Foreground = Brushes.Gray;
+                tbPatronymic.Text = "Отчество";
+            }
         }
 
         private void tbPhone_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbPhone.Text == "Номер телефона")
+            {
+                tbPhone.Foreground = Brushes.Gray;
+                tbPhone.Text = "";
+            }
         }
 
         private void tbPhone_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbPhone.Text == "")
+            {
+                tbPhone.Foreground = Brushes.Gray;
+                tbPhone.Text = "Номер телефона";
+            }
         }
 
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
-
+            AutorizationWindow autorizationWindow = new AutorizationWindow();
+            autorizationWindow.Show();
+            this.Close();
         }
 
         private void BtnReg_Click(object sender, RoutedEventArgs e)
         {
-
+            EFClass.context.User.Add(new User
+            {
+                Login = tbLogin.Text,
+                Password = tbPass.Text,
+            });
         }
 
         private void tbLogin_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbLogin.Text == "Логин")
+            {
+                tbLogin.Text = string.Empty;
+                tbLogin.Foreground = Brushes.Black;
+            }
         }
 
         private void tbLogin_LostFocus(object sender, RoutedEventArgs e)
         {
+            if (tbLogin.Text == "")
+            {
+                tbLogin.Foreground = Brushes.Gray;
+                tbLogin.Text = "Логин";
+            }
+        }
 
+        private void tbBirthday_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbBirthday.Text == "Дата рождения")
+            {
+                tbBirthday.Foreground = Brushes.Gray;
+                tbBirthday.Text = "";
+            }
+        }
+
+        private void tbEmail_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbEmail.Text == "Электронная почта")
+            {
+                tbEmail.Foreground = Brushes.Gray;
+                tbEmail.Text = "";
+            }
+        }
+
+        private void tbSel_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbSel.Text == "Название огранизации")
+            {
+                tbSel.Foreground = Brushes.Gray;
+                tbSel.Text = "";
+            }
+        }
+
+        private void tbInn_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbInn.Text == "ИНН")
+            {
+                tbInn.Foreground = Brushes.Gray;
+                tbInn.Text = "";
+            }
+        }
+
+        private void tbBirthday_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbBirthday.Text == "")
+            {
+                tbBirthday.Foreground = Brushes.Gray;
+                tbBirthday.Text = "Дата рождения";
+            }
+        }
+
+        private void tbSel_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbSel.Text == "")
+            {
+                tbSel.Foreground = Brushes.Gray;
+                tbSel.Text = "Название огранизации";
+            }
+        }
+
+        private void tbInn_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbInn.Text == "")
+            {
+                tbInn.Foreground = Brushes.Gray;
+                tbInn.Text = "ИНН";
+            }
+        }
+
+        private void tbEmail_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbEmail.Text == "")
+            {
+                tbEmail.Foreground = Brushes.Gray;
+                tbEmail.Text = "Электронная почта";
+            }
         }
     }
 }

@@ -58,5 +58,7 @@
             Grid.Row="2" Grid.Column="0" FontFamily="Segoe UI Light"/>
         <TextBlock  HorizontalAlignment="Center" FontSize="48" x:Name="tb4" 
             Grid.Row="3" Grid.Column="0" FontFamily="Segoe UI Light"/>
+        <Image Grid.ColumnSpan="2" Height="380" Width="350" Stretch="Fill" HorizontalAlignment="Center"
+                Source="C:\Users\hlebu\source\repos\ToyShop\ToyShop1\Images\photo.jpg"/>
     </Grid>
 </Page>

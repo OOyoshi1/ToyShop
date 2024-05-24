@@ -74,7 +74,9 @@ namespace ToyShop1
 
         private void BtnPersonal_Click(object sender, RoutedEventArgs e)
         {
+            PersonalAreaWindow pa = new PersonalAreaWindow();
 
+            pa.ShowDialog();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)

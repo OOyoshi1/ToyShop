@@ -66,6 +66,7 @@
     </ApplicationDefinition>
     <Compile Include="Classes\ButtonClass.cs" />
     <Compile Include="Classes\EFClass.cs" />
+    <Compile Include="Classes\ProductClass.cs" />
     <Compile Include="Classes\WindowClass.cs" />
     <Compile Include="DB\CategoryProduct.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
@@ -136,11 +137,11 @@
     <Compile Include="Windows\OrderWindow.xaml.cs">
       <DependentUpon>OrderWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\PersonalAreaWindow.xaml.cs">
+      <DependentUpon>PersonalAreaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\RersonalAreaWindow.xaml.cs">
-      <DependentUpon>RersonalAreaWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -179,11 +180,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\RegistrationWindow.xaml">
+    <Page Include="Windows\PersonalAreaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\RersonalAreaWindow.xaml">
+    <Page Include="Windows\RegistrationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,6 +241,7 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\photo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

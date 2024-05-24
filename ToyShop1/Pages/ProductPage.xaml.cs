@@ -29,6 +29,7 @@ namespace ToyShop1.Pages
             products = EFClass.context.Product.ToList();
             lvProduct.ItemsSource = products;
             WindowClass.label.Visibility = Visibility.Visible;
+            ButtonClass.btn3.Visibility = Visibility.Visible;
         }
 
         private void BtnInfo_Click(object sender, RoutedEventArgs e)
@@ -42,7 +43,9 @@ namespace ToyShop1.Pages
 
         private void BtnBuy_Click(object sender, RoutedEventArgs e)
         {
-
+            Product product = new Product();
+            product = (Product)((Button)sender).DataContext;
+            ProductClass.products.Add(product);
         }
     }
 }

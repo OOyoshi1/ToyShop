@@ -54,17 +54,7 @@
         </TextBox>
         <TextBox x:Name="tbAdres" GotFocus="tbAdres_GotFocus" LostFocus="tbAdres_LostFocus" FontSize="40" 
                 VerticalAlignment="Center" 
-                Foreground="#E0C5BA" Grid.Row="2" Text="Адресс" Height="51" Margin="30,0,30,0" 
-                FontFamily="Segoe UI Light" BorderBrush="{x:Null}">
-            <TextBox.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="10"/>
-                </Style>
-            </TextBox.Resources>
-        </TextBox>
-        <TextBox x:Name="tbTypeOfDel" GotFocus="tbTypeOfDel_GotFocus" LostFocus="tbTypeOfDel_LostFocus" FontSize="40" 
-                 VerticalAlignment="Center" 
-                Foreground="#E0C5BA" Grid.Row="3" Text="Тип доставки" Height="51" Margin="30,0,30,0" 
+                Foreground="#E0C5BA" Grid.Row="2" Text="Адрес" Height="51" Margin="30,0,30,0" 
                 FontFamily="Segoe UI Light" BorderBrush="{x:Null}">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -74,7 +64,7 @@
         </TextBox>
         <TextBox x:Name="tbPhone" GotFocus="tbPhone_GotFocus" LostFocus="tbPhone_LostFocus" FontSize="40" 
                 VerticalAlignment="Center" 
-                Foreground="#E0C5BA" Grid.Row="4" Text="Номер телефона" Height="51" Margin="30,0,30,0" 
+                Foreground="#E0C5BA" Grid.Row="3" Text="Номер телефона" Height="51" Margin="30,0,30,0" 
                 FontFamily="Segoe UI Light" BorderBrush="{x:Null}">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">

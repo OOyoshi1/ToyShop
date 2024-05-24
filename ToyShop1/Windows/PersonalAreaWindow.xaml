@@ -1,0 +1,101 @@
+﻿<Window x:Class="ToyShop1.Windows.PersonalAreaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToyShop1.Windows"
+        mc:Ignorable="d"
+        Title="PersonalAreaWindow" Background="#F8F4F1" Height="1024" Width="780">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" Background="{TemplateBinding Background}" BorderThickness="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="78*"/>
+            <RowDefinition Height="379*"/>
+            <RowDefinition Height="78*"/>
+            <RowDefinition Height="395*"/>
+            <RowDefinition Height="78*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="#E0C5BA">
+            <TextBlock x:Name="Label1" Text="Личный кабинет" FontSize="55" 
+           FontFamily="Segoe Script" HorizontalAlignment="Center" 
+           VerticalAlignment="Center" Foreground="#F8F4F1"/>
+        </Border>
+        <Border Grid.Row="2" Background="#E0C5BA">
+            <TextBlock x:Name="Label2" Text="Заказы" FontSize="55" 
+                FontFamily="Segoe Script" HorizontalAlignment="Center" 
+                VerticalAlignment="Center" Foreground="#F8F4F1"/>
+        </Border>
+        <Border Grid.Row="4" Background="#E0C5BA">
+            <Button x:Name="BtnBack"  Content="Выйти" 
+                       FontSize="35" Height="51" 
+                       Background="#F8F4F1" Width="153" Foreground="#D29A89"
+                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                       FontFamily="Segoe UI Light" FontWeight="UltraLight" 
+                       Click="BtnBack_Click"/>
+        </Border>
+        <WrapPanel Grid.Row="1" >
+            <Image Height="380" Width="350" Stretch="Fill" 
+                   Source="C:\Users\hlebu\source\repos\ToyShop\ToyShop1\Images\photo.jpg"/>
+            <StackPanel HorizontalAlignment="Center" Margin="70 0 0 0">
+                <TextBlock x:Name="tbFIO" FontSize="48" HorizontalAlignment="Center" Margin="0 70 0 0"/>
+                <TextBlock x:Name="tbAdres" FontSize="48" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="tbPhone" FontSize="48" HorizontalAlignment="Center" Margin="0 0 0 50"/>
+                <Button x:Name="BtnChange"
+            FontSize="35" Content="Изменить данные" Height="55"
+            Background="#D29A89" Width="317" Foreground="#F8F4F1" 
+            HorizontalContentAlignment="Center" VerticalAlignment="Center"
+            FontFamily="Segoe UI Light" FontWeight="UltraLight" Click="BtnChange_Click_1"/>
+            </StackPanel>
+        </WrapPanel>
+        <ListView d:ItemsSource="{d:SampleData ItemCount=7}" x:Name="lvProduct" Grid.Row="3">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), 
+                RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
+                ItemWidth="{Binding (ListView.View).ItemWidth, 
+                RelativeSource={RelativeSource AncestorType=ListView}}"
+                MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
+                ItemHeight="{Binding (ListView.View).ItemHeight, 
+                RelativeSource={RelativeSource AncestorType=ListView}}" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="30 0 30 0">
+                        <StackPanel>
+                            <Border CornerRadius="20" Width="297" Height="341">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="C:\Users\hlebu\source\repos\ToyShop\ToyShop1\Images\beb.jpg"/>
+                                </Border.Background>
+                            </Border>
+                            <Border CornerRadius="20" Background="#D29A89" Width="297" Height="80" Margin="0 -80 0 0">
+                                <StackPanel>
+                                    <TextBlock FontSize="20" Text="{Binding NameOfProduct}" HorizontalAlignment="Center"/>
+                                    <TextBlock FontSize="20" Text="{Binding CategoryProduct.NameOfCategory}" HorizontalAlignment="Center"/>
+                                    <TextBlock FontSize="20" Text="{Binding Price}" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+                            <Button x:Name="BtnMore"  
+                        Content="Подробнее" FontSize="30" Height="37" 
+                        Background="#D29A89" Width="178" Foreground="Black" FontWeight="UltraLight" Click="BtnMore_Click" Margin="0 15 0 15" BorderBrush="{x:Null}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Window>

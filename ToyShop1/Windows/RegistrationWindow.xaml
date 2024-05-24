@@ -38,8 +38,8 @@
             <RowDefinition Height="65*"/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="Label3" Text="Регистрация" FontSize="55" 
-         FontFamily="Ink Free" HorizontalAlignment="Center" 
-         VerticalAlignment="Center" Foreground="#E0C5BA" Height="80" Width="364"/>
+         FontFamily="Segoe Script" HorizontalAlignment="Center" 
+         VerticalAlignment="Center" Foreground="#E0C5BA"/>
         <TextBox x:Name="tbLogin" GotFocus="tbLogin_GotFocus" LostFocus="tbLogin_LostFocus" FontSize="40" 
          VerticalAlignment="Center" 
          Foreground="#E0C5BA" Grid.Row="1" Text="Логин" Height="51" Margin="30,0,30,0" 
@@ -94,6 +94,50 @@
                  VerticalAlignment="Center" 
                  Foreground="#E0C5BA" Grid.Row="6" Text="Номер телефона" Height="51" Margin="30,0,30,0" 
                  FontFamily="Segoe UI Light" BorderBrush="{x:Null}">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <ComboBox Grid.Row="7" x:Name="cbGen" Height="51" Foreground="#E0C5BA" FontSize="40" HorizontalContentAlignment="Center"
+                  Background="White" Margin="30,0,30,0" VerticalContentAlignment="Center" BorderBrush="{x:Null}" FontFamily="Segoe UI Light"/>
+        <ComboBox Grid.Row="8" x:Name="cbRole" Height="51" Foreground="#E0C5BA" FontSize="40" HorizontalContentAlignment="Center"
+                  Background="White" VerticalContentAlignment="Center" Margin="30,0,30,0" BorderBrush="{x:Null}" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="tbBirthday" GotFocus="tbBirthday_GotFocus" LostFocus="tbBirthday_LostFocus" FontSize="40" 
+         VerticalAlignment="Center" 
+         Foreground="#E0C5BA" Grid.Row="9" Text="Дата рождения" Height="51" Margin="30,0,30,0" 
+         FontFamily="Segoe UI Light" BorderBrush="{x:Null}">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="tbEmail" GotFocus="tbEmail_GotFocus" LostFocus="tbEmail_LostFocus" FontSize="40" 
+                 VerticalAlignment="Center" 
+                 Foreground="#E0C5BA" Grid.Row="10" Text="Электронная почта" Height="51" Margin="30,0,30,0" 
+                 FontFamily="Segoe UI Light" BorderBrush="{x:Null}">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="tbSel" GotFocus="tbSel_GotFocus" LostFocus="tbSel_LostFocus" FontSize="40" 
+         VerticalAlignment="Center" 
+         Foreground="#E0C5BA" Grid.Row="11" Text="Название организации" Height="51" Margin="30,0,30,0" 
+         FontFamily="Segoe UI Light" BorderBrush="{x:Null}" Visibility="Hidden">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="tbInn" GotFocus="tbInn_GotFocus" LostFocus="tbInn_LostFocus" FontSize="40" 
+                 VerticalAlignment="Center" 
+                 Foreground="#E0C5BA" Grid.Row="10" Text="ИНН" Height="51" Margin="30,0,30,0" 
+                 FontFamily="Segoe UI Light" BorderBrush="{x:Null}" Visibility="Hidden">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

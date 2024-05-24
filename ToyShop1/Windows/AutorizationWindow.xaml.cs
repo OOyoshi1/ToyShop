@@ -79,6 +79,8 @@ namespace ToyShop1.Windows
             {
                 MessageBox.Show("Пользователь не существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            ButtonClass.btn3.Visibility = Visibility.Hidden;
+            ButtonClass.btn1.Visibility = Visibility.Visible;
         }
 
         private void BtnReg_Click(object sender, RoutedEventArgs e)

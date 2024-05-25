@@ -49,10 +49,10 @@
         <WrapPanel Grid.Row="1" >
             <Image Height="380" Width="350" Stretch="Fill" 
                    Source="C:\Users\hlebu\source\repos\ToyShop\ToyShop1\Images\photo.jpg"/>
-            <StackPanel HorizontalAlignment="Center" Margin="70 0 0 0">
-                <TextBlock x:Name="tbFIO" FontSize="48" HorizontalAlignment="Center" Margin="0 70 0 0"/>
-                <TextBlock x:Name="tbAdres" FontSize="48" HorizontalAlignment="Center"/>
-                <TextBlock x:Name="tbPhone" FontSize="48" HorizontalAlignment="Center" Margin="0 0 0 50"/>
+            <StackPanel>
+                <TextBlock x:Name="tbFIO" Text="a" FontSize="20"  TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 70 0 0" FontFamily="Segoe UI Light"/>
+                <TextBlock x:Name="tbAdres" Text="a" FontSize="20"  TextWrapping="Wrap" HorizontalAlignment="Center" FontFamily="Segoe UI Light"/>
+                <TextBlock x:Name="tbPhone" Text="a" FontSize="20" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 0 0 50" FontFamily="Segoe UI Light"/>
                 <Button x:Name="BtnChange"
             FontSize="35" Content="Изменить данные" Height="55"
             Background="#D29A89" Width="317" Foreground="#F8F4F1" 

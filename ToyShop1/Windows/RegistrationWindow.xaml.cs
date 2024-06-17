@@ -132,11 +132,33 @@ namespace ToyShop1.Windows
 
         private void BtnReg_Click(object sender, RoutedEventArgs e)
         {
-            EFClass.context.User.Add(new User
-            {
+            User u = new User() {
                 Login = tbLogin.Text,
                 Password = tbPass.Text,
-            });
+                IdUserRole = (cbRole.SelectedItem as UserRole).IdUserRole,
+            };
+
+            EFClass.context.User.Add(u);
+            EFClass.context.SaveChanges();
+            EFClass.context.Client.Add(
+                new Client
+                {
+                    IdUser = u.IdUser,
+                    FirstName = tbFName.Text,
+                    LastName = tbFName.Text,
+                    Patronymic = tbPatronymic.Text,
+                    Birthday = Convert.ToDateTime(tbBirthday.Text),
+                    Email = tbEmail.Text,
+                    IdGender = (cbGen.SelectedItem as Gender).IdGender,
+                    Phone = tbPhone.Text
+                    
+
+
+                });
+            EFClass.context.SaveChanges();
+            MessageBox.Show("Регистрация прошла успешно", "Успех");
+            this.Close();
+
         }
 
         private void tbLogin_GotFocus(object sender, RoutedEventArgs e)

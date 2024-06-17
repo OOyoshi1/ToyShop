@@ -27,6 +27,33 @@ namespace ToyShop1.Windows
             InitializeComponent();
         }
 
+        private void BtnEnter_Click(object sender, RoutedEventArgs e)
+        {
+            User currentUser = new User();
+            currentUser = EFClass.context.User.Where(x => x.Login == tbLogin.Text && x.Password == tbPass.Text).FirstOrDefault();
+            if (currentUser != null)
+            {
+                CurrentUserClass.currentUser = currentUser;
+                MessageBox.Show("ОК!");
+                MainWindow main = new MainWindow();
+                main.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Пользователь не существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            ButtonClass.btn3.Visibility = Visibility.Hidden;
+            ButtonClass.btn1.Visibility = Visibility.Visible;
+        }
+
+        private void BtnReg_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.Show();
+            this.Close();
+        }
+
         private void tbLogin_GotFocus(object sender, RoutedEventArgs e)
         {
             if (tbLogin.Text == "Логин")
@@ -63,31 +90,6 @@ namespace ToyShop1.Windows
             }
         }
 
-        private void BtnEnter_Click(object sender, RoutedEventArgs e)
-        {
-            User currentUser = new User();
-            currentUser = EFClass.context.User.Where(x => x.Login == tbLogin.Text && x.Password == tbPass.Text).FirstOrDefault();
-            if (currentUser != null)
-            {
-                CurrentUserClass.currentUser = currentUser;
-                MessageBox.Show("ОК!");
-                MainWindow main = new MainWindow();
-                main.Show();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Пользователь не существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            ButtonClass.btn3.Visibility = Visibility.Hidden;
-            ButtonClass.btn1.Visibility = Visibility.Visible;
-        }
-
-        private void BtnReg_Click(object sender, RoutedEventArgs e)
-        {
-            RegistrationWindow registrationWindow = new RegistrationWindow();
-            registrationWindow.Show();
-            this.Close();
-        }
+        
     }
 }

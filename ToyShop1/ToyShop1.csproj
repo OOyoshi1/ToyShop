@@ -138,6 +138,9 @@
     <Compile Include="Windows\OrderWindow.xaml.cs">
       <DependentUpon>OrderWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\PersonalAreaSellerWindow.xaml.cs">
+      <DependentUpon>PersonalAreaSellerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\PersonalAreaWindow.xaml.cs">
       <DependentUpon>PersonalAreaWindow.xaml</DependentUpon>
     </Compile>
@@ -180,6 +183,10 @@
     <Page Include="Windows\OrderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PersonalAreaSellerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\PersonalAreaWindow.xaml">
       <SubType>Designer</SubType>

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ToyShop1.Classes;
 using ToyShop1.DB;
+using ToyShop1.Windows;
 
 namespace ToyShop1.Pages
 {
@@ -35,8 +36,6 @@ namespace ToyShop1.Pages
                     p.Price = p.Quantity * p.Price;
                     orderprice += p.Price;
 
-
-
                 }
             }
             tb_Sum.Text = orderprice.ToString();
@@ -44,7 +43,7 @@ namespace ToyShop1.Pages
 
         private void BtnBuy_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void BtnInfo_Click(object sender, RoutedEventArgs e)
@@ -54,7 +53,8 @@ namespace ToyShop1.Pages
 
         private void BtnOrder_Click(object sender, RoutedEventArgs e)
         {
-
+            OrderWindow orderWindow = new OrderWindow();
+            orderWindow.Show();
         }
     }
 }

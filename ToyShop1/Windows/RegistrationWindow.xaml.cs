@@ -249,12 +249,14 @@ namespace ToyShop1.Windows
             }
         }
 
-        private void cbRole_Selected(object sender, RoutedEventArgs e)
+
+        private void cbRole_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             (cbRole.SelectedItem as UserRole).NameOfRole = "Продавец";
             tbEmail.Visibility = Visibility.Hidden;
             tbInn.Visibility = Visibility.Visible;
             tbSel.Visibility = Visibility.Visible;
-        }
+        
+    }
     }
 }

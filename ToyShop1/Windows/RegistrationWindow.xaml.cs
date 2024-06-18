@@ -248,5 +248,13 @@ namespace ToyShop1.Windows
                 tbEmail.Text = "Электронная почта";
             }
         }
+
+        private void cbRole_Selected(object sender, RoutedEventArgs e)
+        {
+            (cbRole.SelectedItem as UserRole).NameOfRole = "Продавец";
+            tbEmail.Visibility = Visibility.Hidden;
+            tbInn.Visibility = Visibility.Visible;
+            tbSel.Visibility = Visibility.Visible;
+        }
     }
 }

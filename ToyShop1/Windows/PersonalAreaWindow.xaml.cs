@@ -21,14 +21,12 @@ namespace ToyShop1.Windows
     /// </summary>
     public partial class PersonalAreaWindow : Window
     {
-        public PersonalAreaWindow()
+        public PersonalAreaWindow(Client client)
         {
             InitializeComponent();
             List<Product> products = new List<Product>();
             products = EFClass.context.Product.ToList();
             lvProduct.ItemsSource = products;
-            Client client = new Client();
-            client = EFClass.context.Client.Where(x => x.IdUser == CurrentUserClass.currentUser.IdUser).FirstOrDefault();
             tbFIO.Text = client.LastName + " " + client.FirstName + " " + client.Patronymic;
             tbPhone.Text = client.Phone;
             tbAdres.Text = client.Order.FirstOrDefault().Address;

@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ToyShop1.Classes;
+using ToyShop1.DB;
 using ToyShop1.Pages;
 using ToyShop1.Windows;
 
@@ -74,9 +75,22 @@ namespace ToyShop1
 
         private void BtnPersonal_Click(object sender, RoutedEventArgs e)
         {
-            PersonalAreaWindow pa = new PersonalAreaWindow();
+            Seller seller = new Seller();
+            seller = EFClass.context.Seller.Where(x=> x.IdUser == CurrentUserClass.currentUser.IdUser).FirstOrDefault();
+            if(seller == null)
+            {
+                Client client = new Client();
+                client = EFClass.context.Client.Where(x => x.IdUser == CurrentUserClass.currentUser.IdUser).FirstOrDefault();
+                PersonalAreaWindow pa = new PersonalAreaWindow(client);
 
-            pa.ShowDialog();
+                pa.ShowDialog();
+            }
+            else
+            {
+                PersonalAreaSellerWindow pa = new PersonalAreaSellerWindow(seller);
+                pa.ShowDialog();
+            }
+            
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)

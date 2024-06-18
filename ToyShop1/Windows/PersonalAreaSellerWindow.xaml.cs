@@ -21,7 +21,7 @@ namespace ToyShop1.Windows
     /// </summary>
     public partial class PersonalAreaSellerWindow : Window
     {
-        public PersonalAreaSellerWindow()
+        public PersonalAreaSellerWindow(Seller seller)
         {
             InitializeComponent();
             List<Product> products = new List<Product>();

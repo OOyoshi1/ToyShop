@@ -37,7 +37,7 @@ namespace ToyShop1.Windows
             if (tbPass.Text == "Пароль")
             {
                 tbPass.Text = string.Empty;
-                tbPass.Foreground = Brushes.Black;
+                tbPass.Foreground = Brushes.Gray;
             }
         }
 
@@ -151,8 +151,6 @@ namespace ToyShop1.Windows
                     Email = tbEmail.Text,
                     IdGender = (cbGen.SelectedItem as Gender).IdGender,
                     Phone = tbPhone.Text
-                    
-
 
                 });
             EFClass.context.SaveChanges();
@@ -166,7 +164,7 @@ namespace ToyShop1.Windows
             if (tbLogin.Text == "Логин")
             {
                 tbLogin.Text = string.Empty;
-                tbLogin.Foreground = Brushes.Black;
+                tbLogin.Foreground = Brushes.Gray;
             }
         }
 

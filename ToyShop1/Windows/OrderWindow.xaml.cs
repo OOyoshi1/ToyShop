@@ -26,37 +26,62 @@ namespace ToyShop1.Windows
 
         private void BtnBuy_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Заказ успешно оформлен!");
+            this.Close();
         }
 
         private void tbEmail_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbEmail.Text == "Электронная почта")
+            {
+                tbEmail.Text = string.Empty;
+                tbEmail.Foreground = Brushes.Gray;
+            }
         }
 
         private void tbEmail_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbEmail.Text == "")
+            {
+                tbEmail.Text = "Электронная почта";
+                tbEmail.Foreground = Brushes.Gray;
+            }
         }
 
         private void tbAdres_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbEmail.Text == "Адрес")
+            {
+                tbEmail.Text = string.Empty;
+                tbEmail.Foreground = Brushes.Gray;
+            }
         }
 
         private void tbAdres_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbEmail.Text == "")
+            {
+                tbEmail.Text = "Адрес";
+                tbEmail.Foreground = Brushes.Gray;
+            }
         }
 
         private void tbPhone_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbEmail.Text == "Номер телефона")
+            {
+                tbEmail.Text = string.Empty;
+                tbEmail.Foreground = Brushes.Gray;
+            }
         }
 
         private void tbPhone_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (tbEmail.Text == "")
+            {
+                tbEmail.Text = "Номер телефона";
+                tbEmail.Foreground = Brushes.Gray;
+            }
         }
     }
 }

@@ -141,7 +141,25 @@ namespace ToyShop1.Windows
 
             EFClass.context.User.Add(u);
             EFClass.context.SaveChanges();
-            EFClass.context.Client.Add(
+            if ((cbRole.SelectedItem as UserRole).NameOfRole == "Продавец")
+            {
+                EFClass.context.Seller.Add(
+                    new Seller
+                    {
+                        IdUser = u.IdUser,
+                        FirstName = tbFName.Text,
+                        LastName = tbFName.Text,
+                        Patronymic = tbPatronymic.Text,
+                        Birthday = Convert.ToDateTime(tbBirthday.Text),
+                        INN = tbInn.Text,
+                        SellerName = tbSel.Text,
+                        IdGender = (cbGen.SelectedItem as Gender).IdGender,
+                        Phone = tbPhone.Text
+                    });
+            }
+            else
+            {
+                EFClass.context.Client.Add(
                 new Client
                 {
                     IdUser = u.IdUser,
@@ -154,6 +172,8 @@ namespace ToyShop1.Windows
                     Phone = tbPhone.Text
 
                 });
+            }
+            
             EFClass.context.SaveChanges();
             MessageBox.Show("Регистрация прошла успешно", "Успех");
             this.Close();

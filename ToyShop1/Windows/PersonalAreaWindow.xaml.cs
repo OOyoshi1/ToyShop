@@ -45,7 +45,9 @@ namespace ToyShop1.Windows
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
+            ButtonClass.btn3.Visibility = Visibility.Visible;
+            ButtonClass.btn1.Visibility = Visibility.Hidden;
         }
 
         private void BtnMore_Click(object sender, RoutedEventArgs e)

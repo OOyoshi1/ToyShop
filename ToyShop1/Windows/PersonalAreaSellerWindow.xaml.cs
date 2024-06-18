@@ -27,6 +27,9 @@ namespace ToyShop1.Windows
             List<Product> products = new List<Product>();
             products = EFClass.context.Product.ToList();
             lvProduct.ItemsSource = products;
+            tbFIO.Text = seller.LastName + " " + seller.FirstName + " " + seller.Patronymic;
+            tbINN.Text = Convert.ToString(seller.INN);
+            tbSellerName.Text = seller.SellerName;
 
         }
 
@@ -42,7 +45,9 @@ namespace ToyShop1.Windows
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
+            ButtonClass.btn3.Visibility = Visibility.Visible;
+            ButtonClass.btn1.Visibility = Visibility.Hidden;
         }
 
         private void BtnMore_Click(object sender, RoutedEventArgs e)

@@ -34,7 +34,7 @@
            VerticalAlignment="Center" Foreground="#F8F4F1"/>
         </Border>
         <Border Grid.Row="2" Background="#E0C5BA">
-            <TextBlock x:Name="Label2" Text="Заказы" FontSize="55" 
+            <TextBlock x:Name="Label2" Text="Товары" FontSize="55" 
                 FontFamily="Segoe Script" HorizontalAlignment="Center" 
                 VerticalAlignment="Center" Foreground="#F8F4F1"/>
         </Border>
@@ -95,7 +95,7 @@
                                     Click="BtnMore_Click_1" Margin="0 15 0 15" 
                                     BorderBrush="{x:Null}"/>
                             <Button x:Name="BtnEdit"  
-                                    Content="Подробнее" FontSize="30" Height="37" 
+                                    Content="Изменить" FontSize="30" Height="37" 
                                     Background="#D29A89" Width="178" Foreground="Black" 
                                     FontWeight="UltraLight" 
                                     Click="BtnEdit_Click" Margin="0 15 0 15" 

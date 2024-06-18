@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -251,10 +252,19 @@ namespace ToyShop1.Windows
 
         private void cbRole_Selected(object sender, RoutedEventArgs e)
         {
-            (cbRole.SelectedItem as UserRole).NameOfRole = "Продавец";
-            tbEmail.Visibility = Visibility.Hidden;
-            tbInn.Visibility = Visibility.Visible;
-            tbSel.Visibility = Visibility.Visible;
+            if ((cbRole.SelectedItem as UserRole).NameOfRole == "Продавец")
+            {
+                tbEmail.Visibility = Visibility.Hidden;
+                tbInn.Visibility = Visibility.Visible;
+                tbSel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                tbEmail.Visibility = Visibility.Visible;
+                tbInn.Visibility = Visibility.Hidden;
+                tbSel.Visibility = Visibility.Hidden;
+            }
+            
         }
     }
 }

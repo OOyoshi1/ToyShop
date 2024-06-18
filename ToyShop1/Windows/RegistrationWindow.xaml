@@ -102,7 +102,7 @@
         </TextBox>
         <ComboBox Grid.Row="7" x:Name="cbGen" Height="51" Foreground="#E0C5BA" FontSize="40" HorizontalContentAlignment="Center"
                   Background="White" Margin="30,0,30,0" VerticalContentAlignment="Center" BorderBrush="{x:Null}" FontFamily="Segoe UI Light"/>
-        <ComboBox Selected="cbRole_Selected" Grid.Row="8" x:Name="cbRole" Height="51" Foreground="#E0C5BA" FontSize="40" HorizontalContentAlignment="Center"
+        <ComboBox SelectionChanged="cbRole_SelectionChanged" Grid.Row="8" x:Name="cbRole" Height="51" Foreground="#E0C5BA" FontSize="40" HorizontalContentAlignment="Center"
                   Background="White" VerticalContentAlignment="Center" Margin="30,0,30,0" BorderBrush="{x:Null}" FontFamily="Segoe UI Light"/>
         <TextBox x:Name="tbBirthday" GotFocus="tbBirthday_GotFocus" LostFocus="tbBirthday_LostFocus" FontSize="40" 
          VerticalAlignment="Center" 

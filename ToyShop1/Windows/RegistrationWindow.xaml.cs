@@ -250,21 +250,14 @@ namespace ToyShop1.Windows
             }
         }
 
-        private void cbRole_Selected(object sender, RoutedEventArgs e)
+
+        private void cbRole_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if ((cbRole.SelectedItem as UserRole).NameOfRole == "Продавец")
-            {
-                tbEmail.Visibility = Visibility.Hidden;
-                tbInn.Visibility = Visibility.Visible;
-                tbSel.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                tbEmail.Visibility = Visibility.Visible;
-                tbInn.Visibility = Visibility.Hidden;
-                tbSel.Visibility = Visibility.Hidden;
-            }
-            
-        }
+            (cbRole.SelectedItem as UserRole).NameOfRole = "Продавец";
+            tbEmail.Visibility = Visibility.Hidden;
+            tbInn.Visibility = Visibility.Visible;
+            tbSel.Visibility = Visibility.Visible;
+        
+    }
     }
 }

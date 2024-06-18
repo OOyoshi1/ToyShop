@@ -27,7 +27,7 @@ namespace ToyShop1.Windows
             cbGen.ItemsSource = EFClass.context.Gender.ToList();
             cbGen.SelectedIndex = 1;
             cbGen.DisplayMemberPath = "NameOfGender";
-            cbRole.ItemsSource = EFClass.context.UserRole.Where(x => x.NameOfRole != "Администратор" && x.NameOfRole != "Техническая поддержка").ToList();
+            cbRole.ItemsSource = EFClass.context.UserRole.Where(x => x.NameOfRole != "Администратор" && x.NameOfRole != "Тех. Поддержка").ToList();
             cbRole.SelectedIndex = 2;
             cbRole.DisplayMemberPath = "NameOfRole";
         }
